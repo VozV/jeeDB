@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="jeeDB-ear:ear">
+    <output-path>$PROJECT_DIR$/jeeDB-ear/target</output-path>
+    <root id="archive" name="jeeDB-ear-0.0.1b.ear">
+      <element id="artifact" artifact-name="jeeDB-ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

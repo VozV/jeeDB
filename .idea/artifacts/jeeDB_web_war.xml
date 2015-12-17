@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jeeDB-web:war">
+    <output-path>$PROJECT_DIR$/jeeDB-web/target</output-path>
+    <root id="archive" name="jeeDB-web-0.0.1b.war">
+      <element id="artifact" artifact-name="jeeDB-web:war exploded" />
+    </root>
+  </artifact>
+</component>

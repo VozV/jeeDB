@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jeeDB-web:war exploded">
+    <output-path>$PROJECT_DIR$/jeeDB-web/target/jeeDB-web-0.0.1b</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jeeDB-web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="jeeDB-ejb-0.0.1b.jar">
+            <element id="module-output" name="jeeDB-ejb" />
+          </element>
+          <element id="library" level="project" name="Maven: javax:javaee-api:7.0" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/jeeDB-web/target/jeeDB-web-0.0.1b/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="jeeDB-web/web/Web" />
+    </root>
+  </artifact>
+</component>

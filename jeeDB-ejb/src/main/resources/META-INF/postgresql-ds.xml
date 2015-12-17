@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datasources>
+    <local-tx-datasource>
+        <jndi-name>PostgresDS</jndi-name>
+        <connection-url>jdbc:postgresql://localhost:5432/h</connection-url>
+        <driver-class>org.postgresql.Driver</driver-class>
+        <user-name>postgre</user-name>
+        <password>gbib1</password>
+        <metadata>
+            <type-mapping>PostgreSQL</type-mapping>
+        </metadata>
+    </local-tx-datasource>
+</datasources>
