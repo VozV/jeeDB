@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +6,7 @@
     </head>
     <title>Time</title>
     <body>
-        <h1> <%= response.getHeader("some")%></h1>
+        <h1> <%= response.getHeader("resultAdd")%></h1>
     </body>
 </html>
+

@@ -1,44 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com;
 
 import com.ClassesService.AddressService;
 import com.ClassesService.DistinctService;
+import com.ClassesService.OrderService;
+import com.ClassesService.StreetService;
 
 import javax.persistence.*;
 import javax.ejb.Stateful;
+import java.util.HashMap;
 
 @Stateful
 public class JPAService {
-    //@PersistenceContext(name = "JpaPgDb")
-    //private EntityManagerFactory emf;
-/*    public JPAService() {
-        emf = Persistence.createEntityManagerFactory("JpaPgDb");
-    }*/
     @PersistenceContext(name = "JpaPgDb")
     EntityManager em;
 
-    public String getSome() {
-        //em = Persistence.createEntityManagerFactory("JpaPgDb").createEntityManager();
-        //emf = Persistence.createEntityManagerFactory("JpaPgDb");
-        //EntityManager em = emf.createEntityManager();
-        /*AddressService service = new AddressService(em);
-        service.createAddress(1, "а", 10, "б");*/
-        DistinctService ds = new DistinctService(em);
-        ds.createDistinct("123");
-        //EntityTransaction transaction = em.getTransaction();
-        /*try {
-            transaction.begin();
-            //service.createAddress(1, "а", 10, "б");
-            transaction.commit();
-        } catch (Exception e) {
-            transaction.rollback();
-        } finally {
-            em.close();
-        }*/
-        return "some";
+    public HashMap getDistinct() {
+        return new DistinctService(em).getAllDistinct();
+    }
+
+    public HashMap getDistinct(int key) {
+        return new DistinctService(em).getDistinct(key);
+    }
+
+    public HashMap getStreet(int key) {
+        return new StreetService(em).getStreetMap(key);
+    }
+
+    public HashMap getStreet() {
+        return new StreetService(em).getAllStreets();
+    }
+
+    public byte addOrder(int distinctId, int streetId, String houseNumer, String officeNumer, int count, String text) {
+        return new OrderService(em).createOrder(distinctId, streetId, houseNumer, officeNumer, count, text);
+    }
+
+    public byte addDistinct(String name) {
+        return new DistinctService(em).addDistinct(name);
+    }
+
+    public byte addStreet(String street, int distinctId) {
+        return new StreetService(em).addStreet(street, distinctId);
     }
 }

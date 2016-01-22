@@ -15,6 +15,10 @@ import javax.persistence.OneToOne;
 @Entity
 public class Street {
 
+    public int getId() {
+        return id;
+    }
+
     @Id
     @GeneratedValue
     private int id;
@@ -32,4 +36,10 @@ public class Street {
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(nullable = false)
     private District dName;
+
+    public Street(){}
+    public Street(String name, District dName) {
+        this.name = name;
+        this.dName = dName;
+    }
 }

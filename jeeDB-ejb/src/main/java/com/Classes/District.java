@@ -16,12 +16,16 @@ public class District {
     @GeneratedValue
     private int id;
 
-    public int getId() {
-        return id;
-    }
+    private String name;
+
+    public District() {}
 
     public District(String name){
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -32,5 +36,4 @@ public class District {
         this.name = name;
     }
 
-    private String name;
 }

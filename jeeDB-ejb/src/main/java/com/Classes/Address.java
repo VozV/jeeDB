@@ -15,70 +15,50 @@ public class Address {
     @GeneratedValue
     private int id;
 
-    private int houseNumer;
 
-    @Column(length = 2)
-    private String houseNumerExt;
+    @Column(length = 10)
+    private String houseNumer;
 
-    private int office;
-
-    @Column(length = 2)
-    private String officeExt;
+    @Column(length = 10)
+    private String office;
 
     @JoinColumn(nullable = false)
     @OneToOne(fetch = FetchType.EAGER, orphanRemoval = true)
-    private Street sName;
+    private Street street;
 
-    public Address(int houseNumer, String houseNumerExt, int office, String officeExt) {
+    public Address(){}
+    public Address(String houseNumer, String office, Street street) {
         this.houseNumer = houseNumer;
-        this.houseNumerExt = houseNumerExt;
         this.office = office;
-        this.officeExt = officeExt;
-    }
-
-
-    public void setHouseNumer(int value) {
-        this.houseNumer = value;
-    }
-
-    public int getHouseNumer(String value) {
-        return  this.houseNumer;
+        this.street = street;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getHouseNumerExt() {
-        return houseNumerExt;
+    public String getHouseNumer() {
+        return houseNumer;
     }
 
-    public void setHouseNumerExt(String houseNumerExt) {
-        this.houseNumerExt = houseNumerExt.substring(0, 2);
+    public void setHouseNumer(String houseNumer) {
+        this.houseNumer = houseNumer.substring(0, 10);
     }
 
-    public int getOffice() {
+    public String getOffice() {
         return office;
     }
 
-    public void setOffice(int office) {
+    public void setOfficeExt(String office) {
         this.office = office;
     }
 
-    public String getOfficeExt() {
-        return officeExt;
+    public Street getStreet() {
+        return street;
     }
 
-    public void setOfficeExt(String officeExt) {
-        this.officeExt = officeExt;
-    }
-
-    public Street getsName() {
-        return sName;
-    }
-
-    public void setsName(Street sName) {
-        this.sName = sName;
+    public void setStreet(Street street) {
+        this.street = street;
     }
 
 }

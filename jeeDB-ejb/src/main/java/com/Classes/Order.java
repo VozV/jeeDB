@@ -1,19 +1,21 @@
 package com.Classes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Orders {
+@Table(name="orders")
+public class Order {
 
-    public Orders (int count){
+    public Order(int count, String text, Address adr){
         this.status = 1;
         this.dateOrder = new Date();
         this.count = count;
+        this.textAbout = text;
+        this.arddress = adr;
     }
+
+    public Order() {}
 
     public int getId() {
         return id;
@@ -32,6 +34,18 @@ public class Orders {
     }
 
     private byte status;
+
+    public Address getArddress() {
+        return arddress;
+    }
+
+    public void setArddress(Address arddress) {
+        this.arddress = arddress;
+    }
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false)
+    private Address arddress;
 
 
 
@@ -73,7 +87,7 @@ public class Orders {
     }
 
     private int count;
-    
+
     private int master;
     
     private String textAbout;
